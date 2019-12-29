@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019 | 拙学园</title>
+  <title>JS基础 | 拙学园</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="拙学园">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+  <meta name="description" content="JavaScript基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS基础">
+<meta property="og:url" content="http://yoursite.com/2019/12/22/JS%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="拙学园">
+<meta property="og:description" content="JavaScript基础">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-12-21T16:58:16.000Z">
+<meta property="article:modified_time" content="2019-12-21T09:56:35.612Z">
 <meta property="article:author" content="陈威">
 <meta name="twitter:card" content="summary">
   
@@ -138,184 +142,172 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-JS基础" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/26/s7-1500/" class="archive-article-date">
-  	<time datetime="2019-12-25T21:28:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-25</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/26/s7-1500/">s7-1500</a>
+    <h1 class="article-title" itemprop="name">
+      JS基础
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/22/MySQL/" class="archive-article-date">
-  	<time datetime="2019-12-21T20:49:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/22/MySQL/">MySQL</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/22/JS%E5%9F%BA%E7%A1%80/" class="archive-article-date">
+        
+        <a href="/2019/12/22/JS%E5%9F%BA%E7%A1%80/" class="archive-article-date">
   	<time datetime="2019-12-21T16:58:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-21</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/22/JS%E5%9F%BA%E7%A1%80/">JS基础</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="JavaScript基础"><a href="#JavaScript基础" class="headerlink" title="JavaScript基础"></a>JavaScript基础</h1><a id="more"></a>
+<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><p>JS诞生于1995年，它的出现主要用于处理网页中的前端验证，所谓前端验证，就是检查用户输入内容<br>是否符合规则，比如检查用户名的长度。一个完整的JS包含了三个部分：ECMAScript，DOM,和BOM。</p>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><p>JS代码需要写到html框架中head标签的script标签当中，其形式为：<br>&lt;script type=”text/javascript”&gt;。<br>先介绍几个写操作命令：</p>
+<ol>
+<li>控制浏览器弹出一个警告框，其形式为alert(“显示内容”);</li>
+<li>让计算机在页面中输出一个内容，其形式为document.write(“显示内容”);</li>
+<li>向控制台输出一个内容，其形式为console.log(“显示内容”);<br>JS其实也可以编写到标签的onclick属性中，当我们点击按钮时，js代码才会执行，比如：<br/><br>&lt;button\ onclick=”alert(‘单引号内显示内容’)”&gt;&lt;/button&gt;<br/><br>也可以写入超链接中，只不多形式发生了改变，先弹出警告框，才会跳转到链接，比如：<br>&lt;a\ href=”javascript:alert(‘单引号显示内容’)”&gt;&lt;/a&gt;，还有一种形式，就是设置超链接点不开<br>，比如：<br/><br>&lt;a href=”javascript:;”&gt;&lt;/a&gt;<br>上面写在标签属性中，但他们属于结构与行为耦合，不方便维护，不推荐使用。<br>JS代码还可以写到外部.js文件当中，在HTML框架中调用方式为：<br/><br>&lt;script type=”text/javascript” src=”文件名.js”&gt;，注意script标签一旦用于引入外部文件了，<br>就不能在编写代码了，即使编写了浏览器，也会忽略。所以如果需要的话，需要创建一个新的script标签。</li>
+</ol>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/22/JS%E5%9F%BA%E7%A1%80/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/20/CSS%E5%9F%BA%E7%A1%80/" class="archive-article-date">
-  	<time datetime="2019-12-19T21:41:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-19</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/12/22/MySQL/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          MySQL
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/12/20/CSS%E5%9F%BA%E7%A1%80/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CSS基础</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/20/CSS%E5%9F%BA%E7%A1%80/">CSS基础</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/16/HTML%E6%A0%B8%E5%BF%83%E5%9F%BA%E7%A1%80/" class="archive-article-date">
-  	<time datetime="2019-12-16T14:29:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/16/HTML%E6%A0%B8%E5%BF%83%E5%9F%BA%E7%A1%80/">HTML核心基础</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/27/Markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2019-11-26T21:14:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/27/Markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/">Markdown的一些基本用法</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -338,8 +330,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
