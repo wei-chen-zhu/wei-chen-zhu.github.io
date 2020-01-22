@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>MySQL | 拙学园</title>
+  <title>数据结构与算法 | 拙学园</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="MySQL">
+  <meta name="description" content="数据结构与算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL">
-<meta property="og:url" content="http://yoursite.com/2019/12/22/MySQL/index.html">
+<meta property="og:title" content="数据结构与算法">
+<meta property="og:url" content="http://yoursite.com/2019/11/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="拙学园">
-<meta property="og:description" content="MySQL">
+<meta property="og:description" content="数据结构与算法">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2019-12-21T20:49:35.000Z">
-<meta property="article:modified_time" content="2019-12-29T02:59:42.776Z">
+<meta property="article:published_time" content="2019-11-26T21:11:32.000Z">
+<meta property="article:modified_time" content="2020-01-14T03:37:39.382Z">
 <meta property="article:author" content="陈威">
 <meta name="twitter:card" content="summary">
   
@@ -142,189 +142,28 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-MySQL" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-数据结构与算法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      MySQL
+      数据结构与算法
     </h1>
   
 
         
-        <a href="/2019/12/22/MySQL/" class="archive-article-date">
-  	<time datetime="2019-12-21T20:49:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-21</time>
+        <a href="/2019/11/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2019-11-26T21:11:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><a id="more"></a>
-<h2 id="数据库的作用"><a href="#数据库的作用" class="headerlink" title="数据库的作用"></a>数据库的作用</h2><p>保存数据的方式有数组，集合和文件，但是掉电之后，数据就会消失。而数据库可以实现数据持久化，<br>并使用完整的管理系统，统一进行管理，实现结构化查询。其主要由三部分构成：</p>
-<ol>
-<li>DB(database):存储数据的仓库，保存了一系列<strong>有组织</strong>的数据，先将数据放入表中，<br>再将表放在库中；一个数据库可以有多张表，每个表都一个名字，具有唯一性；<br>表具有一些特性，这些特性定义了数据在表中是如何存储的，类似java中类的设计；表由列组成，我们也称为字段，类似于java的属性；<br>表里面的数据是按行存储的，类似于java的对象。</li>
-<li>DBMS(database management system): 数据库是通过DNMS创建和操作的容器。</li>
-<li>SQL(structure Query Language):结构化查询语言，专门用来与数据库通信的语言。几乎所有DBMS都<br>支持SQL，简单易学，配合使用其他语言，可以处理复杂的数据库操作。<h2 id="数据库的配置"><a href="#数据库的配置" class="headerlink" title="数据库的配置"></a>数据库的配置</h2>打开my.ini文件可以看到自己的端口以及安装路径，</li>
-</ol>
-<ul>
-<li>判断自己是否成功安装MySQL <br/><br>进入MySQL的安装目录，进入MySQL Sever，进入bin目录，按住shift键然后点击鼠标右键可以选择<br>在该目录下打开命令窗口，进行测试。</li>
-<li>开启MySQL服务 <br/><br>打开计算机管理选项，在服务里面找到MySQL，右键开启，这相当于找到仓库的大门</li>
-<li>开启MySQL服务 <br/><br>命令窗口中输入：mysql [-h localhost -P 3306(端口号)] -u root -p,如果没有配置<br>mysql的环境变量path，不能这么操作，只能找到bin目录，在里面进行mysql -u root -p的操作。<br>我自己设置的用户名是：root 密码：111111。因为密码更改比较困难，所以不要忘记密码</li>
-</ul>
-<h2 id="MySQL的常见命令"><a href="#MySQL的常见命令" class="headerlink" title="MySQL的常见命令"></a>MySQL的常见命令</h2><p>在MySQL中输入select version();，或者用DOS命令，mysql – V 用来查看版本<br/><br>show databases;显示所有数据库<br/><br>use 数据库名;进入数据库<br/><br>show 表名;当前进入数据库的表，或者show tables from 数据库，来显示数据库中的表<br/><br>select database();查看自己在哪个数据库<br/><br>create table 表名 (<br/><br>列名 列类型,<br/><br>列名 列类型,<br/><br>最后一个就不需要再加逗号了<br>)<br/><br>desc 表名;查看表结构<br/><br>MySQL语法规范可以总结为：不区分大小写，但是建议关键字大写，表名、列名小写；每条命令用分号结尾；<br>每条命令根据需要，可以进行缩进或换行；单行注释：#注释文字；多行注释：/*  */</p>
-<h2 id="数据库的组成"><a href="#数据库的组成" class="headerlink" title="数据库的组成"></a>数据库的组成</h2><p>会有information_schema(保存原数据，保存着其他数据库的信息)<br/><br>mysql(保存用户信息) <br/>performance_schema(收集数据库服务器性能参数) <br/><br>test sys(数据源来自performance)，目标是降低复杂度，更好的让DBA更好阅读库里面的内容。<br/><br>DML,DDL,TCL语言，包含了查询，增删，定义数据，事务功能。</p>
-<h3 id="基础查询-DQL"><a href="#基础查询-DQL" class="headerlink" title="基础查询(DQL)"></a>基础查询(DQL)</h3><p>desc 命令是显示结构的，select是体显示结构中具体数据，其形式为<br/><br><strong>select 查询列表 from 表名</strong>; <br/><br>查询的内容可以是表中的字段，常量值，表达式，函数，一定要注意查询的结果是一个虚拟的表格<br/><br>1 .查询表中的单个字段<br/><br>select last_name(列名) from employees(数据库);<br/><br>2 .查询表中的多个字段<br/><br>select last_name(列名),salary,email from employees(数据库); 字段之间用逗号隔开<br/><br>3 .查询表中的所有字段<br/><br>select * from employees(数据库);但是顺序按照表中顺序，如果想要自定义顺序，双击表中的列，就可以<br>自动添加两边会添加着重号的列名。着重号可以用来当变量名与关键字重名时，进行区分来表示变量名。<br>注意：使用查询功能时，最好前面添加 use 数据库名;保证选中合适的数据库。想执行单条命令时，左键<br>选中再执行就可以了。<br/><br>4. 查询常量值<br/><br>select 100(常量);或者select ‘Jhon’;<br/><br>注：一般不用加from。字符型和日期型常量值必须用单括号引起来，数值型不需要。mysql没有字符串的概<br/><br>念，都用单引号括起来就可以了。<br/><br>5. 查询表达式<br/><br>select 100%98;<br/><br>select salary*12 as “年薪”;该行命令的流程是，取出salary数据，乘以12在放入虚拟的表中<br/><br>6. 查询函数<br/><br>select version();<br/><br>7. 起别名(一方面便于理解，另一方面可以区别重名的情况)<br/><br>select 100%98 as(或者是空格) 结果;(当需要需要查询多个结果用逗号隔开)<br/><br>注意：当别名中有特殊符号，将别名用双引号括起来。<br/><br>8. 去重<br/><br>select distinct departement_id from employees;自动去重<br/><br>注意：distinct只能对一个字段名进行操作<br/><br>9. +号的作用<br/><br>mysql加号只能用作运算符，不能作为连接符<br>如果有一方是字符型，会尝试将其转化为数值型[转换失败就转换成0]，继续做加法运算)。<br>而且只要某一方为null，结果也为null。<br/><br>注意：concat()才会将查询结果会连接成一个字段显示，如：<br/><br>select concat(last_name,first_name)as 姓名 from employess;而如果是<br/><br>select concat(‘last_name’,’first_name’)as 姓名 from employess;<br/><br>最后的结果是last_namefirst_name，所以不要画蛇添足。<br>补充：<br/><br>select ifnull(exprt1,exprt2); 如果exprt1是null则保存为exprt2，否则正常。比如在表中元素<br>拼接的时候，就很有用。<br/><br>isnull函数判断某字符是否为null，是null返回1，不是null返回0。</p>
-<h3 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h3><blockquote>
-<p>满足要求的数据，才会显示</p>
-</blockquote>
-<p>   select 查询列表 from 表名 where 筛选条件;<br/></p>
-<ol>
-<li>条件运算符 ：&gt; &lt; = != &lt;&gt; &gt;= &lt;=(注意没有==);</li>
-</ol>
-<ul>
-<li>select *  from employees where salary&gt;12000;</li>
-</ul>
-<ol start="2">
-<li>按逻辑表达式筛选：&amp;&amp; || !推荐使用 and() or() not()<br/> 注：运算符后面的小括号，看情况添加。</li>
-</ol>
-<ul>
-<li>select last_name,salary,commission_pct from employees where salary&gt;=10000 and salary&lt;=20000;</li>
-</ul>
-<ol start="3">
-<li>模糊查询：like; between and;in ;is null;is not null;</li>
-</ol>
-<ul>
-<li>select /* from employees where last_name like ‘%a%’;用来显示last_name中包含字符a的员工信息，like<br>一般会与通配符一起使用，<br/>比如%用来任意多个字符也包含0个字符，<br/><br>_用来表示任意单个字符，而且数值型会转化为字符型进行操作。<br>如果把下划线当作普通字符来看，就利用转义字符就可以了。<br/><br>如果内容包含null结果都会返回false</li>
-<li>select * from employees where employee_id between 100 and 120;(大于和小于)</li>
-<li>select last_name job_id from employees where job_id in(‘可能出现的值’，用逗号隔开);<br/>用来某字段的<br>值是否属于列表中的某一项。要求in列表值类型必须一致或兼容，出现的值不能含有通配符。</li>
-<li>select * from employees where commission_pct is null;<br/><br>注意等于号不能判断null值_。可以使用安全等于&lt;=&gt;。尽量不要使用is null 因为会触发全表扫描，增加数据库查询负担。<br/>
-综上所述：slect 后面紧跟的是需要显示的表(表名可以自己起，操作完数据后再填入)from 数据库
-where 判断条件。
-### 排序查询
-select 查询列表 from 表名 where 筛选条件 order by 排序列表 (asc(升序)|desc(降序));
-不写的话，默认升序 <br/></li>
-<li>select * from employees where depatment_id&gt;=90 order by asc;<br/></li>
-<li>select * ,salary /*12 /(1+ifnull(commission_pct,0)) as 年薪 from employees<br/><br>order by 年薪 desc;(也就是说可以使用别名进行排序)<br/></li>
-<li>还可以用函数进行排序，比如length()函数<br/></li>
-<li>如果想要多个字段排序，order by 第一个字段,第二个字段<br/></li>
-<li>order by 一般放在查询语句的最后边，limit字句除外；</li>
-</ul>
-<h3 id="常见函数"><a href="#常见函数" class="headerlink" title="常见函数"></a>常见函数</h3><p>调用方法：select 函数名 (实参列表) from </p>
-<h4 id="单行函数"><a href="#单行函数" class="headerlink" title="单行函数"></a>单行函数</h4><ul>
-<li><p>length(‘’);获取参数值的字节个数；<br/></p>
-</li>
-<li><p>concat(字段不用加引号，额外添加字符需要添加单引号);拼接字符串<br/></p>
-</li>
-<li><p>upper()和lower();<br/></p>
-</li>
-<li><p>substr(‘’,num1(开始位置),num2(截取几个字符，不加的话默认到最后));<br/><br>取字符串，但是要注意索引从1开始<br/></p>
-</li>
-<li><p>instr(‘’,’’);返回子串第一次出现的位置索引，如果找不到返回0；<br/></p>
-</li>
-<li><p>trim();去除两端的空格，同样trim(‘字符串’from ‘’);去除字符串两端的某些字符串;<br/></p>
-</li>
-<li><p>lpad(‘’,num,’指定字符’);用指定字符实现左填充指定长度;同理rpad()是右填充<br/></p>
-</li>
-<li><p>replace(‘原串’,’被替换元素’,’替换元素’);替换命令<br/></p>
-</li>
-<li><p>round(num1,num2);保留num2位数的四舍五入;<br/></p>
-</li>
-<li><p>cell();向上取整;<br/></p>
-</li>
-<li><p>floor();向下取整;<br/></p>
-</li>
-<li><p>truncate(num1,num2);小数保留几位;<br/></p>
-</li>
-<li><p>mod取余操作，余数的正负号与被除数相同;<br/></p>
-</li>
-<li><p>now();返回当前系统日期+时间，是字符串的形式;<br/></p>
-</li>
-<li><p>curdate();返回当前系统日期，是字符串的形式;<br/></p>
-</li>
-<li><p>curtime();返回当前系统时间，是字符串的形式;<br/></p>
-</li>
-<li><p>str_to_date(‘’,’%-%-%’);将字符通过指定格式转换成日期;<br><a href="https://blog.csdn.net/shenliang1985/article/details/90142010" target="_blank" rel="noopener">格式规则</a>;<br/></p>
-</li>
-<li><p>date_format(‘’,’%/%/‘);将日期转换为字符;;<br/></p>
-</li>
-<li><p>select version();显示数据库版本;<br/></p>
-</li>
-<li><p>select database();显示当前所在数据库;<br/></p>
-</li>
-<li><p>select user();显示当前用户;<br/></p>
-</li>
-<li><p>select if( , , );类似于三元运算符<br/></p>
-</li>
-<li><p>case 要判断的字段或者表达式<br/><br>when 常量1 then 要显示的值1;<br/><br>else 常量n then 要显示的值n;<br/><br>end  as “表名”<br/><br>注意：如果显示的是值得话，when …then 后边不要有分号；case 不一定要搭配着select使用；<br/><br>case 上一种方法类似于switch-case语句，还有一种使用方法类似于多重if，其形式为<br/><br>case<br/><br>when 条件1 then 要显示的值1;<br/><br>when 条件2 then 要显示的值2;<br/><br>else  要显示的值n;<br/><br>end as “表名”<br/> </p>
-</li>
-<li><p>如果case搭配着select使用，case前面的语句需要加一个逗号。 <br/> </p>
-<h3 id="分组函数"><a href="#分组函数" class="headerlink" title="分组函数"></a>分组函数</h3><blockquote>
-<p>用作统计使用，最后只会返回一个结果，而不是一组结果。</p>
-</blockquote>
-</li>
-<li><p>select sum(distinct关键字(空格)字段名) from employees;<br/></p>
-</li>
-<li><p>select avg(distinct关键字(空格)字段名) from employees;<br/></p>
-</li>
-<li><p>select min/max(字段名) from employees;<br/></p>
-</li>
-<li><p>select count(distinct关键字(空格)字段名) from employees;计算不为null的个数<br/><br>注：sum和avg只适用于数值型，min,max和count可以适用任何类型。<br/><br>这五个分组函数都会忽略null值<br/></p>
-</li>
-<li><p>select datadiff(,);用来计算日期差值<br/><br>slect count(*) from employees;用来统计表中有多少行，只要是一行不全为null就<br>会被统计;<br/><br>注：slect count(i) from employees;也会实现同样的功能 <br/><br>和分组函数一同查询的字段要求是group by 后面的字段，因为要求行数相同</p>
-</li>
-</ul>
-<h3 id="分组查询"><a href="#分组查询" class="headerlink" title="分组查询"></a>分组查询</h3><ul>
-<li>比如我想要查询不同部门的平均工资，就需要分组查询了,其形式为：<br/><br>select 查询列表,分类依据<br/><br>from where<br>group by 分类依据(多个分类依据用逗号隔开，没有顺序要求)<br>order by ;<br>需要注意是：查询列表必须特殊，要求可以是分组函数和group_by后出现的字段<br/><br>where要在from之后，group_by之前，如果想要根据分组查询之后的结果，继续进行筛选，<br>需要having 关键字放在order by之后</li>
-</ul>
-<h3 id="连接查询-多表查询"><a href="#连接查询-多表查询" class="headerlink" title="连接查询(多表查询)"></a>连接查询(多表查询)</h3><blockquote>
-<p>按照功能分类可以分为：内连接，外连接和交叉连接，实现了两表间的交集功能。</p>
-</blockquote>
-<h4 id="内链接-sq92标准"><a href="#内链接-sq92标准" class="headerlink" title="内链接(sq92标准)"></a>内链接(sq92标准)</h4><ol>
-<li>等值连接<br/><br>selct 列名 from   多张表名 where 连接条件，防止出现笛卡尔连接错误 <br/><br>SELECT last_name ,department_name from employees,departments<br/><br>where employees.department_id=departments.department_id;<br/><br>为了方便where 条件可以为表起一个别名，但是由于是先执行from命令，所以selest 语句<br>也需要使用别名，表名被刷新了。<br/><br>如果此时还有筛选条件，用and连接就可以了</li>
-<li>非等值连接 <br/><br>betweem and ,用来进行范围的限制</li>
-<li>自连接 <br/><br>查看自己上级的名字，需要在原始表查看两次<br/><br>SELECT e.employee_id ,e.last_name ,m.employee_id,m.last_name <br/><br>from employees e,employees m<br/><br>WHERE e.manager_id=m.employee_id;<br/><br>上述是sql92的方法，下面以外连接为例介绍sql99的用法</li>
-</ol>
-<h4 id="外连接"><a href="#外连接" class="headerlink" title="外连接"></a>外连接</h4><p>分为主表和从表，其查询结果为主表中的所有记录，既包括内连接的交集部分，也包括主从表不匹配的显示<br>为null；如果是左外连接，left join 左边是主表，右外连接 right join 右边是主表</p>
-<ol>
-<li><p>左外连接 <br/><br>select 查询列表 from 表1 别名[连接类型] join 表2 别名  <br/><br>on 连接条件 where 筛选条件 <br/><br>连接类型包括：inner,left,right,full,cross<br/><br>select d.*,e.employee_id FROM departments as d LEFT  OUTER JOIN employees as  e<br/><br>ON d.department_id=e.department_id<br/><br>WHERE e.department_id is NULL;<br/><br>上面这段程序，主表为departments,从表为employees，当二者类型匹配时，从表的department_id不为null。<br>因为两个表连接时会将所有列保留，但是是按照主表行顺序进行排列的，所有匹配元素形成映射关系，不匹配<br>元素从表元素为null。外连接的查询结果是主表中的所有行，如果从表和它匹配的将显示匹配行，如果从表没有<br>匹配的则显示null，一般用来查询除了交集部分剩余的不匹配行。</p>
-</li>
-<li><p>右外连接 <br/></p>
-</li>
-<li><p>全外连接 (mysql不支持)<br/><br>相当于内连接的结果+表1中有但表2没有的+表2中有但表1没有的</p>
-<h4 id="交叉连接"><a href="#交叉连接" class="headerlink" title="交叉连接"></a>交叉连接</h4><p>其关键字为：cross join<br>其实就是用99语法实现了笛卡尔乘积的效果。</p>
-<h3 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h3><p>含义：出现在其他语句中的select语句，称为子查询或者内查询，外部查询语句，称为主查询或者外查询<br/><br>标量子查询(结果只有一行一列)–select，where，having后面；列子查询(结果只有一列多行)–where，<br>having后面行子查询(结果只有一行多列)；表子查询(结果为多行多列)–from，exists<br/></p>
-<h4 id="where或者having后面的"><a href="#where或者having后面的" class="headerlink" title="where或者having后面的"></a>where或者having后面的</h4><p>特点：子查询放在小括号内，一般放在条件的右侧，标量子查询，配合着关系运算符进行使用；<br/><br>列子查询，配合着多行操作符使用，比如in,not in,any,some,all<br/><br>以上程序可以说明，最低工资低于50号部门的最低工资的部门信息</p>
-</li>
-<li><p>标量子查询<br/><br>SELECT * FROM employees WHERE salary&gt;(<br/></p>
-<pre><code>SELECT salary FROM employees WHERE last_name=&apos;Abel&apos;&lt;br/&gt;</code></pre><p>);<br/><br>如上的程序就可以说明，比abel工资高的员工信息了<br/><br>SELECT MIN(salary) from employees<br/><br>GROUP BY department_id<br/><br>HAVING MIN(salary)&gt;(<br/><br>SELECT MIN(salary) from employees<br/><br>WHERE department_id=50<br/><br>);<br/></p>
-</li>
-<li><p>列子查询<br/><br>SELECT last_name from employees WHERE department_id in(<br/><br>SELECT DISTINCT  department_id FROM departments<br/><br>WHERE location_id IN(1400,1700)<br/><br>);<br/><br>如上程序说明，在不同表中的数据，进行筛选时的操作。<br/></p>
-</li>
-<li><p>行子查询<br/><br>select * 就是行子查询了<br/></p>
-</li>
-</ol>
-<h4 id="exists后面-相关子查询"><a href="#exists后面-相关子查询" class="headerlink" title="exists后面(相关子查询)"></a>exists后面(相关子查询)</h4><p>exit();null返回0，不是null返回1；可以用in或者not in代替<br/></p>
-<p>习题：<br/></p>
-<ol>
-<li>查询各部门中工资比本部门平均工资高的员工信息<br/><br>SELECT employee_id,last_name,salary FROM employees as e INNER JOIN(<br/><br>SELECT AVG(salary) as ag,department_id<br/><br>FROM employees <br/><br>GROUP BY department_id<br/><br>)as ag_dep<br/><br>ON e.department_id=ag_dep.department_id<br/><br>WHERE salary&gt;ag_dep.ag;<br/></li>
-<li>查询平均工资最低的部门信息<br/><br>SELECT AVG(salary),department_id FROM employees (注意与分组函数在一起的只能之分组信息)<br/><br>GROUP BY department_id<br/><br>HAVING AVG(salary)=(<br/><pre><code>SELECT  MIN(ag)&lt;br/&gt;
-FROM(&lt;br/&gt;
-SELECT AVG(salary) as ag ,department_id FROM employees&lt;br/&gt;
-GROUP BY department_id&lt;br/&gt;</code></pre>)     as ag_dep<br/><br>);<br/><br>更为巧妙的一种解法为：<br/><br>SELECT * FROM departments WHERE department_id=(<br/><br>SELECT department_id<br/><br>FROM employees<br/><br>GROUP BY department_id<br/><br>ORDER BY AVG(salary)<br/><br>LIMIT 1<br/><br>);<br/><br>在上一题的基础上，如果还想显示部门的全部信息，就需要在加入内连接了</li>
-</ol>
-<p>总结：先得到子查询结果，在进行外查询，所以当子查询结果为标量时，用where和having后面用关系符判断<br>；所以当子查询结果为行向量或者列向量时，用where和having后面用in/not in判断符，如果是多行多列的话<br>将两张表连接起来，子查询放在from后面；而且连接的时候要考虑用哪种连接方式。</p>
-<h3 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h3><p>应用场景：当要显示的数据，一页显示不全，需要分页提交sql请求，特点是limit语句放在查询语句最后，<br>其形式为：<br/><br>limit offset,size;其中offset要显示条目的起始索引(起始索引从0开始)，size是要显示的条目个数<br/><br>select * from employees limit 0,5;<br/>，以后应用中可以采用公式，limit (page-1)*size,size;</p>
-<h3 id="联合查询"><a href="#联合查询" class="headerlink" title="联合查询"></a>联合查询</h3><p>场景：将多条查询语句的结果合并成一个结果。其语法形式为：<br>查询语句1 union 查询语句2，如果有多张无关表，需要跨表查询，合并为一个结果时，具有很大的优势<br>特点有：要求多条查询结果的列数是一致的；要求多条查询语句的列名顺序一致；要求union会自动去重，<br>union all关键字可以包含重复项。</p>
-<h3 id="数据操作语言-DML"><a href="#数据操作语言-DML" class="headerlink" title="数据操作语言(DML)"></a>数据操作语言(DML)</h3><h4 id="插入语句"><a href="#插入语句" class="headerlink" title="插入语句"></a>插入语句</h4><p>语法一：insert into 表名 (列名,) values(值,)<br/><br>需要注意的是：插入值的类型要与列的类型一致；不可以为null的列必须插入值；列数和值的个数必须<br>一致；可以省略列名，默认是所有列，而且列的顺序和表中列的顺序一致<br/><br>语法二：insert into 表名 set 列名=值,列名=值<br/><br>对比这两种方法，方式一支持插入多行，方式二不支持；方式一支持子查询，insert into 表名<br>select ;这样不用再写value，就可以将select查询得到的结果插入进去了</p>
-<h4 id="修改语句"><a href="#修改语句" class="headerlink" title="修改语句"></a>修改语句</h4><p>update 表名 set 列=新值,where 筛选条件<br/><br>上述命令可以实现，单表内容的修改，如果想要修改连接表中某一张表的内容：<br/><br>update 表1 别名 innner|left|right join 表2 别名 on 连接条件 set 列=值，where </p>
-<h4 id="删除语句"><a href="#删除语句" class="headerlink" title="删除语句"></a>删除语句</h4><p>语法一：delete from 表名 where 筛选条件<br/><br>上述命令可以实现，单表内容的修改，如果想要删除多表内容：<br/><br>delect 表1的别名,表2的别名 from 表1 别名innner|left|right join 表2 别名 on 连接条件 where<br>语法二：truncate table 表<br/><br>对比这两种方法，delete是部分删除，truncate是全部删除；假如有删除的表中有自增长列，<br>如果有delete删除后，在插入数据，自增长的列从断点开始，而truncate删除后，在插入数据，<br>自增长的列从1开始；delete删除后有返回值，truncate删除后没有返回值，比如返回几行受到影响；<br>truncate删除不能回滚，delete删除可以回滚</p>
-<h3 id="数据定义语言-DDL"><a href="#数据定义语言-DDL" class="headerlink" title="数据定义语言(DDL)"></a>数据定义语言(DDL)</h3><p>应用场景是：对库或者是表的创建(create)，修改(alter)，删除(drop)。</p>
-<h4 id="库的管理"><a href="#库的管理" class="headerlink" title="库的管理"></a>库的管理</h4><p>create database if not exists 库名;<br/><br>一般不对库名进行修改，容易导致数据库崩溃，如果想要更改库名，可以进入<br>C:\ProgramData\MySQL\MySQL Server 5.7\Data路径，修改文件夹名字；如果想要更改库<br>的字符集用：<br/><br>alter database book character set gbk;<br/><br>drop database book if exists book;</p>
-<h4 id="表的管理"><a href="#表的管理" class="headerlink" title="表的管理"></a>表的管理</h4><p>create table 表名(<br/><br>列名 列的类型 【(长度)约束】,<br/><br>列名 列的类型 【(长度)约束】注意：最后一行没有逗号<br>)<br/></p>
-
+        <h1 id="数据结构与算法"><a href="#数据结构与算法" class="headerlink" title="数据结构与算法"></a>数据结构与算法</h1><a id="more"></a>
+<h2 id="计算机操作系统"><a href="#计算机操作系统" class="headerlink" title="计算机操作系统"></a>计算机操作系统</h2>
       
 
       
@@ -403,7 +242,7 @@ GROUP BY department_id&lt;br/&gt;</code></pre>)     as ag_dep<br/><br>);<br/><br
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/22/MySQL/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -417,20 +256,15 @@ GROUP BY department_id&lt;br/&gt;</code></pre>)     as ag_dep<br/><br>);<br/><br
   
 <nav id="article-nav">
   
-    <a href="/2020/01/09/Java%E5%9F%BA%E7%A1%80/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/11/27/Markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Java基础
+          Markdown的一些基本用法
         
       </div>
     </a>
   
-  
-    <a href="/2019/12/22/JS%E5%9F%BA%E7%A1%80/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">JS基础</div>
-      <i class="icon-circle-right"></i>
-    </a>
   
 </nav>
 
