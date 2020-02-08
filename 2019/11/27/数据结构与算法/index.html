@@ -25,8 +25,17 @@
 <meta property="og:image" content="https://i.loli.net/2020/02/01/wK2Fb1hCk4gumWU.png">
 <meta property="og:image" content="https://i.loli.net/2020/02/03/LkV9XB8D4sWpxRi.png">
 <meta property="og:image" content="https://i.loli.net/2020/02/05/BY958qHGwkSc37x.png">
+<meta property="og:image" content="https://i.loli.net/2020/02/06/G8eNYuUf5bxdhKs.png">
+<meta property="og:image" content="https://i.loli.net/2020/02/06/i1aKhAgCQTb5ZEY.png">
+<meta property="og:image" content="https://i.loli.net/2020/02/07/s3XmPpSQTqj4kbl.png">
+<meta property="og:image" content="https://i.loli.net/2020/02/07/9yVl5smUBwJLKFk.png">
+<meta property="og:image" content="https://i.loli.net/2020/02/08/rkeFtfjXZdg3WTQ.png">
+<meta property="og:image" content="https://i.loli.net/2020/02/08/oDpc9Xeu27ZrdqA.png">
+<meta property="og:image" content="https://i.loli.net/2020/02/08/FgsBRhzPW2q7Dt4.png">
+<meta property="og:image" content="https://i.loli.net/2020/02/08/dI5aWrk76jgJXel.png">
+<meta property="og:image" content="https://i.loli.net/2020/02/08/zvfMx9DksiImcAT.png">
 <meta property="article:published_time" content="2019-11-26T21:11:32.000Z">
-<meta property="article:modified_time" content="2020-02-05T13:54:57.086Z">
+<meta property="article:modified_time" content="2020-02-08T04:12:38.049Z">
 <meta property="article:author" content="陈威">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://i.loli.net/2020/01/26/6arc3zkMlvO7dns.png">
@@ -238,6 +247,27 @@ i&lt;=100;i++)</code>的时间频度是100+1，因为还会进行一次比较操
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">byte[] b&#x3D;new byte[]&#123;65,66,67,68&#125;;&#x2F;&#x2F;字节数组</span><br><span class="line">        String s&#x3D;new String(b,&quot;ascii&quot;);&#x2F;&#x2F;第二个参数指定编码方式</span><br><span class="line">        System.out.print(s);</span><br></pre></td></tr></table></figure>
 
 <p>赫夫曼编码同样可以对文件进行压缩和解码，</br><br>下面对赫夫曼压缩文件一些注意事项进行说明：如果文件本身就是经过压缩处理的</br><br>赫夫曼编码是按照字节来处理的，因此可以处理所有的文件；如果一个文件中的内容，重复的数据不多，压缩效果也不会很明显</p>
+<h4 id="二叉排序树"><a href="#二叉排序树" class="headerlink" title="二叉排序树"></a>二叉排序树</h4><p>对于二叉排序树的任何一个非叶子节点，要求左子节点的值比当前节点的值小，右子节点比当前节点的值大，如果<br>有相同的值，放在左边和右边都可以。比如对于数据{7,3,10,12,5,1,9,}\构成的二叉排序树为：</p>
+<p><img src="https://i.loli.net/2020/02/06/G8eNYuUf5bxdhKs.png" alt="二叉排序树.png"></p>
+<p>在程序设计中，不停与根节点(包含子树)的值进行比较，比根节点大往右走，比根节点小往左走，<br>最终找到一个叶子结点挂上去。对于一个二叉排序树进行中序遍历，就是升序排列。</br><br>二叉树的删除：有三种情况需要处理，删除叶子节点；删除有一个叶子节点的子树根节点；删除有两个叶子节点的子树根节点；<br>对于第一种情况，需要先找到要删除的节点targetNode，找到targetNode的父节点parent，确定targetNode<br>是左子节点还是右子节点，进行删除。对于第二种情况，需要先找到要删除的节点targetNode，找到targetNode的父节点parent，<br>确定targetNode的子节点是左子节点还是右子节点，targetNode是parents的左子节点还是右子节点，分为四种情况，<br>将targetNode的子节点拿上来。对于第三种情况，需要先找到要删除的节点targetNode，找到targetNode的父节点parent，<br>(从中序遍历可以进行升序排列的知识可以得到)，从targetNode的右子树找到找到最小的节点，用一个临时变量，<br>将最小节点的值保存到temp变量当中，删除该最小的节点，其他结构不变的情况下targetNode.value=temp;<br>在程序设计过程中，先编写函数去找这个节点是否存在，并返回这个节点，分为this.value\?=value的三种情况，<br>分别进行讨论，并继续往左右进行递归，如果到达叶子节点还没有找到，返回null，之后再编写函数，去找该节点的父节点，<br>注意在这个过程中，使用this.left/rigt之前一定先判断是否为空，因为存在this.value==value的操作，决定<br>应该往左边还是右边走，同时与操作具有短路效应，要考虑到与操作的顺序问题，<br>而且要考虑到要删除的节点是树的根节点的情况，此时父节点为null，而且要考虑到只有一个根节点的情况，就直接删除<br>就好了。而且对于第二种情况判断条件相对来说比较复杂，就不妨先有第一种情况，在写第三种，其余的自然就是<br>第二种情况了(正难则反的道理)，第三种情况为了不频繁移动导致错误，可以编写一个寻找最小值的方法进行处理，<br>最小值只可能是第一种情况或者是第二种情况，所以可以在这个函数中调用删除方法，将这个节点删除，将这个节点<br>的值返回。</br><br>当删除到最后剩下两个节点时，如果此时选择删除根节点，又相当于一种新的情况，此时parents节点为null,<br>类比于情况2，需要先把root还给另外一个节点，就实现了删除，因为之前的节点left和righ都是null。</p>
+<h4 id="平衡排序树"><a href="#平衡排序树" class="headerlink" title="平衡排序树"></a>平衡排序树</h4><p>如果对于数列{1,2,3,4,5,6,}创建的一棵二叉排序树，一直往右子树上面放数据，虽然对插入速度没有什么影响，但是<br>查询速度明显降低，而且每次还要查看左子树，所以速度比单链表还要慢。所以出现了平衡二叉树(AVL树)，本身就是二叉排序树，<br>还具有是一棵空树或者左右两个子树的高度差的绝对值不超过1，并且两个子树都是一棵平衡二叉树的特点。有红黑树，AVL等等。<br>将顺序二叉树转化为平衡二叉树，需要进行左旋转和右旋转。</br><br>下面介绍左旋转的规则：先创建一个新的节点，值等于当前根节点的值；把新节点的左子树设置成当前节点的左子树；<br>把新节点的右子树设置成当前节点的右子树的左子树；把当前结点的值替换为右子节点的值；把当前结点的右子树设置<br>为右子树的右子树；把当前结点的左子树设置为新节点。<br><img src="https://i.loli.net/2020/02/06/i1aKhAgCQTb5ZEY.png" alt="平衡二叉树.png"></p>
+<p>是否进行旋转，左子树和右子树以及当前结点为根节点的高度是关键，而且旋转是在每添加一个数据之后，判断是否执行，<br>所以只写在Node节点的添加方法中就可以了。</br><br>下面再介绍右旋转(哪边子树较低，就往哪边旋转)，其基本步骤为：创建一个新的节点，值等于当前根节点的值；<br>把新节点的右子树设置成当前节点的右子树；把新节点的左子树设置成当前节点的左子树的右子树；把当前结点的值替换为左子节点的值；<br>把当前结点的左子树设置为左子树的左子树；把当前结点的右子树设置为新节点。</p>
+<p><img src="https://i.loli.net/2020/02/07/s3XmPpSQTqj4kbl.png" alt="右旋转.png"></p>
+<p>有的时候单旋转并不能解决问题，比如</p>
+<p><img src="https://i.loli.net/2020/02/07/9yVl5smUBwJLKFk.png" alt="单旋转失效.png"></p>
+<p>因为左旋转就是将右子树的左子树转到左边，右旋转就是将左子树的右子树转到右边，所以当符合右旋转的条件时，<br>如果它的左子树的右子树的高度大于它的左子树的左子树的高度，就先对当前这个<em>节点左子树</em>进行左旋转，在执行当前节点<br>的右旋转的操作。左旋转同样。</br><br>在程序设计过程中需要注意，哪一块调用的函数，就把前面这一个整体都当作this来看待。</br></p>
+<h4 id="多路查找树"><a href="#多路查找树" class="headerlink" title="多路查找树"></a>多路查找树</h4><p>二叉树操作效率高，但也存在一些问题，二叉树是需要加载到内存中的，当二叉树的节点很多时，<br>需要多次i/o操作，而且二叉树高度很大，会降低操作速度。为了解决这个问题，出现了多叉树，<br>比如文件系统和数据库系统就利用了磁盘预读原理，对B树或者B+树种存储的数据进行加载。</p>
+<h5 id="2-3树"><a href="#2-3树" class="headerlink" title="2-3树"></a>2-3树</h5><p>下面介绍一种比较简单的B树：2-3树，其具有如下特点：<br>所有叶子节点都在同一层(只要是B树都满足这个条件)</br><br>有两个叶子节点的节点叫做2节点，有三个叶子节点的节点叫做3节点，而且要么没有子节点，要么全满。</br><br>在2-3树种进行插入操作，如果是在头节点插入，就直接生成一个二节点容纳就行；如果插入的是二节点<br>直接将其升级为三节点；如果插入的是三节点，那么就分解它，并向上抛，将这三个key看做是一个key<br>(中间值)和两个子节点，然后将key插入到上一层中，如果上面也是三节点，同样需要进行拆解，上抛。<br>当最大根节点只有一个数的时候左子树上抛的不会影响右子树，当有两个数时，两个数拆分成一个数，<br>把上抛的数和根节点自身的两个数，进行调整，左右子树都发生变化。<br>注意树的最大根节点只能有两个数。而且要满足二节点和三节点要么为空，要么全满。</p>
+<h5 id="B树，B-树，B-树"><a href="#B树，B-树，B-树" class="headerlink" title="B树，B+树，B*树"></a>B树，B+树，B*树</h5><p>B树可以记为：B-tree，本身也是平衡二叉树，其阶是用来表示节点最多子节点的个数，当进行查找操作时，<br>就相当与在集合数组中，进行一次二分查找，所以要查找的内容会分布在整棵树中，叶子节点和非叶子节点<br>都会存放数据，其复杂度为线性对数阶。基本形式为：</p>
+<p><img src="https://i.loli.net/2020/02/08/rkeFtfjXZdg3WTQ.png" alt="B树.png"><br>B+树与B树也基本相同，区别是B+树只有达到叶子节点才能命中，所有关键字都出现在叶子节点的链表中，<br>非叶子结点相当于叶子节点的索引，叶子结点相当于数据层，所以其更适合存储数据的数据层，B+树的优势在于，<br>非叶子节点相当于每次将数据段三等分，然后数据层是链表的形式。B树和B+树都有各自的应用场景，没有<br>好坏之分。其基本形式为：</p>
+<p><img src="https://i.loli.net/2020/02/08/oDpc9Xeu27ZrdqA.png" alt="B_树.png"></p>
+<p>B*树是在B+树的基础上发展而来的，在B+树的非根和非叶子结点在增加指向兄弟的指针，它规定了非叶子节点<br>关键字的个数最少为(2/3)M，B+树最少为1/2(二节点)，所以B*空间使用率更高，其基本形式为：</p>
+<p><img src="https://i.loli.net/2020/02/08/FgsBRhzPW2q7Dt4.png" alt="B星树.png"></p>
+<h3 id="图"><a href="#图" class="headerlink" title="图"></a>图</h3><p>线性表和树都只有一个前驱节点，当存在多对多的关系时，就需要用到图的知识。图常用的概念有<br>顶点(vertex),边(edge)，路径，无向图，有向图，带权图(网)。图可以用邻接矩阵，邻接表表示，<br>邻接矩阵对每个顶点都分配了空间，相连为1，不相连为0，规定自己与自己认为不相连，这样就会存在<br>很多不存在的边，造成空间的浪费。邻接表只关心存在的边，其由数组和链表组成，相连的节点放在链表当中。<br>其基本形式为：<br><img src="https://i.loli.net/2020/02/08/dI5aWrk76jgJXel.png" alt="邻接矩阵.png"></p>
+<p><img src="https://i.loli.net/2020/02/08/zvfMx9DksiImcAT.png" alt="邻接表.png"></p>
+<p>在程序设计过程中，如果采用矩阵的方法，利用String类型存储顶点，保存在ArrayList当中；将矩阵保存在<br>二维数组当中，显示二维数组可以遍历行，然后调用Arrays.toString()方法进行输出，而且每个节点虽然<br>有自己的名字，但是在数组中是以索引保存的，所以需要添加根据索引，得到节点名称的函数。</p>
+<h4 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h4><p>一般有两种策略：深度优先(dfs)，广度优先。只是找到所有节点，并不是找到通路，先后顺序并不代表<br>路径，这一点要注意。</p>
+<p>深度优先每次都在访问完当前结点后首先访问当前结点的<br>第一个邻接结点，优先往纵向挖掘深入，而不是对一个结点的所有邻接节点进行横向访问。<br>在深度优先的代码实现过程中，其基本步骤为：访问初始节点V，并标记节点V已访问；查找结点V的<br>第一个邻接节点W，若W存在，判断W是否被访问，如果没有被访问，对W进行深度优先遍历，如果被访问了，<br>就查找结点V的W邻接节点的下一个邻接节点；如果W没有找到，从V的下一个结点继续找，<br>找到之后仍然从这个节点继续向下。注意：邻近节点是按照添加顺序判断的，可以理解为一个一维数组，逐个排列。<br>还需要建立boolean数组，记录是否被访问。</p>
 
       
 
